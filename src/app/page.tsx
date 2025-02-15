@@ -1,101 +1,134 @@
-import Image from "next/image";
+import { FaGithub, FaLinkedin, FaFilePdf, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col gap-12 pb-8 max-w-3xl mx-auto">
+      {/* Hero Section */}
+      <section className="flex flex-col gap-6">
+        <h1 className="text-4xl sm:text-5xl font-bold text-balance">
+          Hey, I&apos;m{" "}
+          <span className="text-foreground/80">Alé Pouroullis</span> 👋
+        </h1>
+        <div className="flex flex-col gap-4 text-lg text-foreground/80 text-balance leading-relaxed">
+          <p>
+            I&apos;m a software engineer who thrives on building sophisticated
+            systems from the ground up. Born and raised in South Africa, I
+            recently moved to the UK to pursue new challenges and opportunities.
+          </p>
+          <p>
+            My journey isn&apos;t your typical tech story. From composing
+            electronic music to playing electric guitar, I&apos;ve always
+            balanced the analytical with the artistic. This dual perspective
+            shapes how I approach software engineering—with both technical
+            precision and creative innovation.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <a
+              href="https://www.linkedin.com/in/alexandros-pouroullis-a105051b6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+            >
+              <FaLinkedin />
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/AlePouroullis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+            >
+              <FaGithub />
+              GitHub
+            </a>
+            <a
+              href="mailto:ale.pouroullis@gmail.com"
+              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+            >
+              <FaEnvelope />
+              Email
+            </a>
+            <a
+              href="/Alexandros Pouroullis CV (Jan 2025).pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+            >
+              <FaFilePdf />
+              CV
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Experience Section */}
+      <section className="flex flex-col gap-6">
+        <h2 className="text-2xl font-bold">Professional Impact</h2>
+        <div className="prose dark:prose-invert max-w-none">
+          <p>
+            At my core, I&apos;m a builder who loves tackling complex
+            challenges. I&apos;ve architected and delivered sophisticated
+            full-stack systems that made real-world impact:
+          </p>
+          <ul>
+            <li>
+              Built a mobility platform from scratch that revolutionized
+              corporate transport and taxi payments in South Africa, reaching
+              $1.2M in annual revenue
+            </li>
+            <li>
+              Developed an innovative payment system that caught Visa&apos;s
+              attention, leading to a partnership and funding
+            </li>
+            <li>
+              Mastered iOS development in just 5 months to build and publish a
+              social app on the App Store
+            </li>
+            <li>
+              Led technical teams in fast-paced startup environments,
+              implementing comprehensive cloud-native solutions on AWS
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Current Project */}
+      <section className="flex flex-col gap-6">
+        <h2 className="text-2xl font-bold">Current Exploration</h2>
+        <div className="border rounded-lg p-6 hover:bg-foreground/5 transition-colors">
+          <h3 className="text-xl font-medium mb-3">EdgeLogger</h3>
+          <p className="text-foreground/80 mb-4">
+            A high-performance industrial log ingestion server built with Rust.
+            This project is my journey into systems programming, combining
+            several technologies I&apos;ve been eager to explore: Kubernetes for
+            orchestration, Kafka for message streaming, and modern observability
+            patterns. It&apos;s not just about log ingestion—it&apos;s about
+            understanding how to build robust, observable distributed systems
+            from the ground up.
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/AlePouroullis/EdgeLogger"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm border rounded-lg px-4 py-2 hover:bg-foreground/10 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            <FaGithub />
+            View on GitHub
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Looking Forward */}
+      <section className="flex flex-col gap-4">
+        <h2 className="text-2xl font-bold">Looking Forward</h2>
+        <p className="text-foreground/80 text-lg">
+          Based in Solihull and looking for opportunities in London, I&apos;m
+          excited to contribute to meaningful projects while immersing myself in
+          the UK&apos;s tech scene and cultural landscape. I&apos;m particularly
+          interested in roles that challenge me to grow as an engineer while
+          allowing me to bring my unique perspective to the table.
+        </p>
+      </section>
     </div>
   );
 }
