@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaFilePdf, FaEnvelope } from "react-icons/fa";
+import { RecentPosts } from "@/components/RecentPosts";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/alexandros-pouroullis-a105051b6/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+              className="link-button"
             >
               <FaLinkedin />
               LinkedIn
@@ -36,15 +37,12 @@ export default function Home() {
               href="https://github.com/AlePouroullis"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+              className="link-button"
             >
               <FaGithub />
               GitHub
             </a>
-            <a
-              href="mailto:ale.pouroullis@gmail.com"
-              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
-            >
+            <a href="mailto:alexpouroullis@gmail.com" className="link-button">
               <FaEnvelope />
               Email
             </a>
@@ -52,7 +50,7 @@ export default function Home() {
               href="/Alexandros Pouroullis CV (Jan 2025).pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-base border rounded-lg px-4 py-2 hover:bg-foreground/5 transition-colors"
+              className="link-button"
             >
               <FaFilePdf />
               CV
@@ -95,28 +93,27 @@ export default function Home() {
       {/* Current Project */}
       <section className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold">Current Exploration</h2>
-        <div className="border rounded-lg p-6 hover:bg-foreground/5 transition-colors">
+        <div className="card">
           <h3 className="text-xl font-medium mb-3">EdgeLogger</h3>
           <p className="text-foreground/80 mb-4">
-            A high-performance industrial log ingestion server built with Rust.
-            This project is my journey into systems programming, combining
-            several technologies I&apos;ve been eager to explore: Kubernetes for
-            orchestration, Kafka for message streaming, and modern observability
-            patterns. It&apos;s not just about log ingestion—it&apos;s about
-            understanding how to build robust, observable distributed systems
-            from the ground up.
+            A high-performance log ingestion server built with Rust, exploring
+            modern systems programming through Kubernetes orchestration and
+            cloud-native observability patterns.
           </p>
           <a
             href="https://github.com/AlePouroullis/EdgeLogger"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm border rounded-lg px-4 py-2 hover:bg-foreground/10 transition-colors"
+            className="link-button"
           >
             <FaGithub />
             View on GitHub
           </a>
         </div>
       </section>
+
+      {/* Recent Posts Section */}
+      <RecentPosts />
 
       {/* Looking Forward */}
       <section className="flex flex-col gap-4">

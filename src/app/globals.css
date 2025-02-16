@@ -3,19 +3,117 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f9fc;
+  --foreground: 26, 28, 30; /* RGB values */
+  --muted: 107, 114, 128;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  /* Increased opacity for light mode gradient */
+  --gradient-start: rgba(37, 99, 235, 0.08); /* Was 0.03 */
+  --gradient-end: rgba(37, 99, 235, 0.15); /* Was 0.08 */
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #1a1a1a;
+  --foreground: 229, 231, 235; /* RGB values */
+  --muted: 156, 163, 175;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  /* Dark mode gradients adjusted accordingly */
+  --gradient-start: rgba(59, 130, 246, 0.05);
+  --gradient-end: rgba(59, 130, 246, 0.12);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-background min-h-screen relative;
+    color: rgb(var(--foreground));
+  }
+
+  /* Made the gradient streak more pronounced */
+  body::before {
+    @apply content-[''] fixed inset-0 -z-10;
+    background: linear-gradient(
+      135deg,
+      transparent 15%,
+      /* Reduced from 20% */ var(--gradient-start) 30%,
+      /* Reduced from 35% */ var(--gradient-end) 50%,
+      var(--gradient-start) 70%,
+      /* Increased from 65% */ transparent 85% /* Increased from 80% */
+    );
+    filter: blur(60px); /* Reduced blur from 80px */
+    transform: scale(1.5) translateY(-15%);
+  }
+
+  /* Slightly increased opacity of the pattern */
+  body::after {
+    @apply content-[''] fixed inset-0 -z-20;
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--gradient-start) 0px,
+      var(--gradient-start) 1px,
+      transparent 1px,
+      transparent 30px
+    );
+    opacity: 0.4; /* Increased from 0.3 */
+    mix-blend-mode: overlay;
+  }
+}
+@layer components {
+  .link-button {
+    @apply flex items-center gap-2 text-base 
+           border rounded-lg px-4 py-2 
+           transition-all duration-200 ease-out;
+    border-color: rgba(var(--foreground), 0.1);
+    background: transparent;
+    color: rgb(var(--foreground));
+  }
+  .link-button:hover {
+    border-color: rgba(var(--foreground), 0.2);
+    background: rgba(var(--foreground), 0.05);
+  }
+
+  .card-hover {
+    @apply transition-all duration-200
+          hover:shadow-sm;
+    background: transparent;
+  }
+
+  .card-hover:hover {
+    background: rgba(var(--foreground), 0.05);
+  }
+
+  .back-link {
+    @apply inline-flex items-center gap-2 
+           text-sm
+           transition-colors duration-200;
+    color: rgba(var(--foreground), 0.6);
+  }
+  .back-link:hover {
+    color: rgb(var(--foreground));
+  }
+
+  .tag {
+    @apply px-3 py-1 text-xs rounded-full
+           transition-all duration-200;
+    border: 1px solid rgba(var(--foreground), 0.2);
+    background: transparent;
+    color: rgba(var(--foreground), 0.7);
+  }
+
+  .card {
+    @apply rounded-lg p-6;
+    border: 1px solid rgba(var(--foreground), 0.1);
+  }
+
+  .card-interactive {
+    @apply rounded-lg p-6 transition-colors;
+    border: 1px solid rgba(var(--foreground), 0.1);
+  }
+  .card-interactive:hover {
+    background: rgba(var(--foreground), 0.05);
+    border-color: rgba(var(--foreground), 0.2);
+  }
 }
 
 @layer utilities {

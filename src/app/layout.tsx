@@ -15,9 +15,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alé Pouroullis - Software Engineer",
+  title: {
+    default: "Alé Pouroullis | Software Engineer",
+    template: "%s | Alé Pouroullis",
+  },
   description:
-    "Software engineer specializing in full-stack development and cloud-native solutions",
+    "Software engineer specializing in systems programming and full-stack development. Building sophisticated systems with technical precision and creative innovation.",
+  openGraph: {
+    title: "Alé Pouroullis | Software Engineer",
+    description:
+      "Software engineer specializing in systems programming and full-stack development.",
+    url: "https://alepouroullis.com",
+    siteName: "Alé Pouroullis",
+    locale: "en_UK",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png", 
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
