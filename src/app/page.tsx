@@ -47,7 +47,7 @@ export default function Home() {
               Email
             </a>
             <a
-              href="/Alexandros Pouroullis CV (Jan 2025).pdf"
+              href="/CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="link-button"
