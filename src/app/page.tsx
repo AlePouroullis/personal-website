@@ -103,7 +103,7 @@ export default function Home() {
         <div className="card">
           <h3 className="text-xl font-medium mb-3">EdgeLogger</h3>
           <p className="text-foreground/80 mb-4">
-            A high-performance log ingestion server built with Rust, exploring
+            A high-performance log ingestion server designed for industrial use, built with Rust, exploring
             modern systems programming through Kubernetes orchestration and
             cloud-native observability patterns.
           </p>
