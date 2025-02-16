@@ -23,6 +23,13 @@ export default function Home() {
             shapes how I approach software engineering—with both technical
             precision and creative innovation.
           </p>
+          <p>
+            When I&apos;m not coding, you&apos;ll find me pushing my limits in
+            various ways —from training for marathon majors to practicing
+            handstands and exploring the vibrant arts scene. I bring this same
+            energy and dedication to everything I do, whether it&apos;s building
+            software or mastering a new skill.
+          </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="https://www.linkedin.com/in/alexandros-pouroullis-a105051b6/"
@@ -114,6 +121,44 @@ export default function Home() {
 
       {/* Recent Posts Section */}
       <RecentPosts />
+
+      {/* Interests Section */}
+      <section className="flex flex-col gap-6">
+        <h2 className="text-2xl font-bold">Beyond Code</h2>
+        <div className="prose dark:prose-invert max-w-none">
+          <p>
+            Life is about balance, and I dedicate myself to pursuing excellence
+            across different domains:
+          </p>
+          <ul>
+            <li>
+              <strong>Movement as Art:</strong> I approach movement as a
+              holistic practice, inspired by methodologies like Ido
+              Portal&apos;s. From handstand practice to tumbling and gymnastics,
+              I explore the intersection of strength, mobility, and creative
+              expression through movement.
+            </li>
+            <li>
+              <strong>Athletic Pursuits:</strong> An avid runner with the Cape
+              Town marathon under my belt, I&apos;m now training for the world
+              majors. This endurance work complements my broader movement
+              practice, which includes calisthenics and weightlifting—each
+              discipline informing and enhancing the others.
+            </li>
+            <li>
+              <strong>Musical Background:</strong> My creative side comes alive
+              through music production and electric guitar. I&apos;m always
+              eager to connect with fellow musicians and explore live
+              performance opportunities in the UK.
+            </li>
+          </ul>
+          <p>
+            These pursuits reflect my philosophy that mastery in any domain—be
+            it movement, music, or code—comes through dedicated practice,
+            creative exploration, and an open mind to learning.
+          </p>
+        </div>
+      </section>
 
       {/* Looking Forward */}
       <section className="flex flex-col gap-4">
