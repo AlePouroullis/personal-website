@@ -58,6 +58,27 @@
     opacity: 0.4; /* Increased from 0.3 */
     mix-blend-mode: overlay;
   }
+
+  /* Add prose styling */
+  .prose strong {
+    color: rgb(var(--foreground));
+  }
+
+  .prose {
+    color: rgba(var(--foreground), 0.8);
+  }
+
+  /* Optimize gradient for mobile */
+  @media (max-width: 768px) {
+    body::before {
+      filter: blur(40px); /* Reduced blur for mobile */
+      transform: scale(1.2) translateY(-10%); /* Less extreme transform */
+    }
+
+    body::after {
+      opacity: 0.3; /* Slightly reduced pattern opacity on mobile */
+    }
+  }
 }
 @layer components {
   .link-button {
@@ -99,6 +120,10 @@
     border: 1px solid rgba(var(--foreground), 0.2);
     background: transparent;
     color: rgba(var(--foreground), 0.7);
+  }
+
+  .content-divider {
+    border-top: 1px solid rgba(var(--foreground), 0.2);
   }
 
   .card {

@@ -4,6 +4,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
 
+function calculateReadingTime(content: string): string {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
+}
+
 // Generate static params at build time
 export async function generateStaticParams() {
   return allPosts
@@ -25,6 +32,8 @@ export default async function PostPage(props: PageProps) {
     notFound();
   }
 
+  const readingTime = calculateReadingTime(post.body.raw);
+
   return (
     <article className="prose dark:prose-invert mx-auto">
       <Link href="/posts" className="back-link no-underline">
@@ -41,16 +50,20 @@ export default async function PostPage(props: PageProps) {
               day: "numeric",
             })}
           </time>
-          <div className="flex gap-2">
-            {post.tags.map((tag: string) => (
-              <span key={tag} className="tag">
-                {tag}
-              </span>
-            ))}
-          </div>
+          <span>·</span>
+          <span>{readingTime}</span>
         </div>
       </div>
       <MDXContent code={post.body.code} />
+      <div className="mt-8 pt-4 content-divider">
+        <div className="flex flex-wrap gap-2">
+          {post.tags.map((tag: string) => (
+            <span key={tag} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
     </article>
   );
 }

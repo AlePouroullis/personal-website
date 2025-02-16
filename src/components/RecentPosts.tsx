@@ -40,11 +40,11 @@ function PostCard({ post }: { post: Post }) {
     <Link href={`/posts/${post.slug}`} className="card-interactive">
       <h3 className="text-xl font-medium mb-2">{post.title}</h3>
       <p className="text-foreground/60 mb-4">{post.description}</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex flex-wrap gap-4 items-center">
         <time className="text-sm text-foreground/40">
           {formatDate(post.date)}
         </time>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {post.tags.map((tag: string) => (
             <span key={tag} className="tag">
               {tag}

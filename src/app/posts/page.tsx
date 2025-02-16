@@ -30,15 +30,15 @@ export default function PostsPage() {
           <Link
             key={post.slug}
             href={`/posts/${post.slug}`}
-            className="block border rounded-lg p-6 hover:bg-foreground/5 transition-colors"
+            className="card-interactive"
           >
             <h2 className="text-xl font-medium mb-2">{post.title}</h2>
             <p className="text-foreground/60 mb-4">{post.description}</p>
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-wrap gap-4 items-center">
               <time className="text-sm text-foreground/40">
                 {formatDate(post.date)}
               </time>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag: string) => (
                   <span key={tag} className="tag">
                     {tag}
