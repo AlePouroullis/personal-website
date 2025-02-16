@@ -2,9 +2,25 @@
 
 import { useTheme } from "@/components/ThemeProvider";
 import { HiSun, HiMoon } from "react-icons/hi";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Wait until mounted to avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Don't render anything until mounted to prevent flash
+  if (!mounted) {
+    return (
+      <button className="rounded-md p-2 hover:bg-foreground/5 transition-colors">
+        <div className="w-5 h-5" />
+      </button>
+    );
+  }
 
   return (
     <button
