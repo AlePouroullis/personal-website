@@ -13,7 +13,7 @@ My personal website built with Next.js, featuring a blog system and dynamic them
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 15 (App Router)
 - **Styling:** Tailwind CSS
 - **Content:** MDX with Contentlayer
 - **Deployment:** Vercel
